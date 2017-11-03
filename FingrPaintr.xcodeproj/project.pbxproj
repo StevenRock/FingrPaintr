@@ -1,0 +1,351 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1926208C1FA9928500D95358 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926208B1FA9928500D95358 /* AppDelegate.swift */; };
+		1926208E1FA9928500D95358 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926208D1FA9928500D95358 /* ViewController.swift */; };
+		192620911FA9928500D95358 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1926208F1FA9928500D95358 /* Main.storyboard */; };
+		192620931FA9928500D95358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192620921FA9928500D95358 /* Assets.xcassets */; };
+		192620961FA9928500D95358 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 192620941FA9928500D95358 /* LaunchScreen.storyboard */; };
+		192620A41FA99B5C00D95358 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192620A31FA99B5C00D95358 /* SlideMenuController.swift */; };
+		192620A61FA99E9200D95358 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192620A51FA99E9200D95358 /* MainViewController.swift */; };
+		192620A81FA99E9C00D95358 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192620A71FA99E9C00D95358 /* LeftViewController.swift */; };
+		192620AA1FA99EA400D95358 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192620A91FA99EA400D95358 /* RightViewController.swift */; };
+		192620AE1FA9A08800D95358 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192620AD1FA9A08800D95358 /* CanvasView.swift */; };
+		19CB06D61FAAE760003DB70B /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CB06D51FAAE760003DB70B /* extension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		192620881FA9928500D95358 /* FingrPaintr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FingrPaintr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1926208B1FA9928500D95358 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1926208D1FA9928500D95358 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		192620901FA9928500D95358 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		192620921FA9928500D95358 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		192620951FA9928500D95358 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		192620971FA9928500D95358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		192620A31FA99B5C00D95358 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
+		192620A51FA99E9200D95358 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		192620A71FA99E9C00D95358 /* LeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		192620A91FA99EA400D95358 /* RightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
+		192620AD1FA9A08800D95358 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		19CB06D51FAAE760003DB70B /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		192620851FA9928500D95358 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1926207F1FA9928500D95358 = {
+			isa = PBXGroup;
+			children = (
+				1926208A1FA9928500D95358 /* FingrPaintr */,
+				192620891FA9928500D95358 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		192620891FA9928500D95358 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				192620881FA9928500D95358 /* FingrPaintr.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1926208A1FA9928500D95358 /* FingrPaintr */ = {
+			isa = PBXGroup;
+			children = (
+				1926208B1FA9928500D95358 /* AppDelegate.swift */,
+				192620A31FA99B5C00D95358 /* SlideMenuController.swift */,
+				1926208D1FA9928500D95358 /* ViewController.swift */,
+				192620A51FA99E9200D95358 /* MainViewController.swift */,
+				192620AD1FA9A08800D95358 /* CanvasView.swift */,
+				192620A71FA99E9C00D95358 /* LeftViewController.swift */,
+				192620A91FA99EA400D95358 /* RightViewController.swift */,
+				19CB06D51FAAE760003DB70B /* extension.swift */,
+				1926208F1FA9928500D95358 /* Main.storyboard */,
+				192620921FA9928500D95358 /* Assets.xcassets */,
+				192620941FA9928500D95358 /* LaunchScreen.storyboard */,
+				192620971FA9928500D95358 /* Info.plist */,
+			);
+			path = FingrPaintr;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		192620871FA9928500D95358 /* FingrPaintr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1926209A1FA9928500D95358 /* Build configuration list for PBXNativeTarget "FingrPaintr" */;
+			buildPhases = (
+				192620841FA9928500D95358 /* Sources */,
+				192620851FA9928500D95358 /* Frameworks */,
+				192620861FA9928500D95358 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FingrPaintr;
+			productName = FingrPaintr;
+			productReference = 192620881FA9928500D95358 /* FingrPaintr.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		192620801FA9928500D95358 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Steven;
+				TargetAttributes = {
+					192620871FA9928500D95358 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 192620831FA9928500D95358 /* Build configuration list for PBXProject "FingrPaintr" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1926207F1FA9928500D95358;
+			productRefGroup = 192620891FA9928500D95358 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				192620871FA9928500D95358 /* FingrPaintr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		192620861FA9928500D95358 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				192620961FA9928500D95358 /* LaunchScreen.storyboard in Resources */,
+				192620931FA9928500D95358 /* Assets.xcassets in Resources */,
+				192620911FA9928500D95358 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		192620841FA9928500D95358 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1926208E1FA9928500D95358 /* ViewController.swift in Sources */,
+				192620AE1FA9A08800D95358 /* CanvasView.swift in Sources */,
+				192620A41FA99B5C00D95358 /* SlideMenuController.swift in Sources */,
+				1926208C1FA9928500D95358 /* AppDelegate.swift in Sources */,
+				192620A81FA99E9C00D95358 /* LeftViewController.swift in Sources */,
+				192620A61FA99E9200D95358 /* MainViewController.swift in Sources */,
+				192620AA1FA99EA400D95358 /* RightViewController.swift in Sources */,
+				19CB06D61FAAE760003DB70B /* extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1926208F1FA9928500D95358 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				192620901FA9928500D95358 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		192620941FA9928500D95358 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				192620951FA9928500D95358 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		192620981FA9928500D95358 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		192620991FA9928500D95358 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1926209B1FA9928500D95358 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 36D8UT7VUZ;
+				INFOPLIST_FILE = FingrPaintr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Steven.FingrPaintr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1926209C1FA9928500D95358 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 36D8UT7VUZ;
+				INFOPLIST_FILE = FingrPaintr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Steven.FingrPaintr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		192620831FA9928500D95358 /* Build configuration list for PBXProject "FingrPaintr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				192620981FA9928500D95358 /* Debug */,
+				192620991FA9928500D95358 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1926209A1FA9928500D95358 /* Build configuration list for PBXNativeTarget "FingrPaintr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1926209B1FA9928500D95358 /* Debug */,
+				1926209C1FA9928500D95358 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 192620801FA9928500D95358 /* Project object */;
+}
