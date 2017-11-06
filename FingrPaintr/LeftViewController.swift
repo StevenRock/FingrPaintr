@@ -15,6 +15,7 @@ class LeftViewController: UIViewController {
     @IBOutlet weak var lineHeadBtn: UIButton!
     @IBOutlet weak var roundHeadBtn: UIButton!
     @IBOutlet weak var widthSlider: UISlider!
+    @IBOutlet weak var widthValueLabel: UILabel!
     
     let square_off = UIImage(named: "squareHeadUnselected.png")!
     let line_off = UIImage(named: "lineHeadUnselected.png")!
@@ -40,7 +41,6 @@ class LeftViewController: UIViewController {
         rCenter = roundHeadBtn.frame.minX
 
         // Do any additional setup after loading the view.
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "lineCap"), object: self, userInfo: ["lineCap": rLineCap])
         
         squareHeadBtn.setImage(square_off, for: .normal)
         lineHeadBtn.setImage(line_off, for: .normal)
@@ -50,6 +50,15 @@ class LeftViewController: UIViewController {
         
     }
 
+    @IBAction func widthSliderChanged(_ sender: UISlider) {
+        widthValueLabel.text = String(format: "%.1f", widthSlider.value)
+        widthValueLabel.sizeToFit()
+        
+        let widthValue = CGFloat(widthSlider.value)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "width"), object: self, userInfo: ["width": widthValue])
+        
+    }
+    
     @IBAction func squareHeadPressed(_ sender: UIButton) {
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "lineCap"), object: self, userInfo: ["lineCap": sLineCap])

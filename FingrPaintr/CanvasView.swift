@@ -11,11 +11,14 @@ import UIKit
 class CanvasView: UIView {
     
     var lineCap = CGLineCap.round
+    var lineWidth: CGFloat = 10
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
         NotificationCenter.default.addObserver(self, selector: #selector(lineCapChanged), name: NSNotification.Name(rawValue: "lineCap"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(widthChanged), name: NSNotification.Name(rawValue: "width"), object: nil)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -45,7 +48,7 @@ class CanvasView: UIView {
         
         UIColor.black.setStroke()//make it optional
         
-        ctx?.setLineWidth(10)//make it optional
+        ctx?.setLineWidth(lineWidth)//make it optional
         
         ctx?.strokePath()
         
@@ -60,5 +63,10 @@ class CanvasView: UIView {
         
         lineCap = notification.userInfo?["lineCap"]as! CGLineCap
         
+    }
+    
+    @objc func widthChanged(notification: NSNotification) {
+        
+        lineWidth = notification.userInfo?["width"]as! CGFloat
     }
 }
