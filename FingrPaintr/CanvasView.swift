@@ -7,18 +7,26 @@
 //
 
 import UIKit
+var lineWidthSizeLabel:Float = 0.0
+var currentColor: UIColor!
 
 class CanvasView: UIView {
     
     var lineCap = CGLineCap.round
     var lineWidth: CGFloat = 10
+    var colorOpacity: CGFloat = 1
+    var penColor = UIColor.black
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        currentColor = penColor
+        lineWidthSizeLabel = Float(lineWidth)
         
         NotificationCenter.default.addObserver(self, selector: #selector(lineCapChanged), name: NSNotification.Name(rawValue: "lineCap"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(widthChanged), name: NSNotification.Name(rawValue: "width"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(colorChanged), name: NSNotification.Name(rawValue: "color"), object: nil)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -46,9 +54,11 @@ class CanvasView: UIView {
         
         ctx?.addLine(to: to)
         
-        UIColor.black.setStroke()//make it optional
+        let chosedColor = penColor //optional
+        let setColor = chosedColor.withAlphaComponent(colorOpacity)//optional
+        setColor.setStroke()
         
-        ctx?.setLineWidth(lineWidth)//make it optional
+        ctx?.setLineWidth(lineWidth)
         
         ctx?.strokePath()
         
@@ -68,5 +78,10 @@ class CanvasView: UIView {
     @objc func widthChanged(notification: NSNotification) {
         
         lineWidth = notification.userInfo?["width"]as! CGFloat
+    }
+    
+    @objc func colorChanged(notification: NSNotification){
+        
+        penColor = notification.userInfo?["color"]as! UIColor
     }
 }

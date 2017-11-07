@@ -10,7 +10,8 @@ import UIKit
 
 
 class LeftViewController: UIViewController {
-
+    
+    @IBOutlet weak var eraserBtn: UIButton!
     @IBOutlet weak var squareHeadBtn: UIButton!
     @IBOutlet weak var lineHeadBtn: UIButton!
     @IBOutlet weak var roundHeadBtn: UIButton!
@@ -27,18 +28,24 @@ class LeftViewController: UIViewController {
     var sCenter:  CGFloat!
     var lCenter:  CGFloat!
     var rCenter: CGFloat!
+    var eCenter: CGFloat!
     
     let rLineCap = CGLineCap.round
     let lLineCap = CGLineCap.butt
     let sLineCap = CGLineCap.square
     
+    let eraserColor = UIColor.white.withAlphaComponent(1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //widthSlider.setThumbImage(<#T##image: UIImage?##UIImage?#>, for: .normal)
+        widthSlider.value = lineWidthSizeLabel
+        widthValueLabel.text = String(lineWidthSizeLabel)
         
         sCenter = squareHeadBtn.frame.minX
         lCenter = lineHeadBtn.frame.minX
         rCenter = roundHeadBtn.frame.minX
+        eCenter = eraserBtn.frame.minX
 
         // Do any additional setup after loading the view.
         
@@ -46,7 +53,7 @@ class LeftViewController: UIViewController {
         lineHeadBtn.setImage(line_off, for: .normal)
         roundHeadBtn.setImage(round_on, for: .normal)
         
-        toggleButton(onButton: roundHeadBtn, offButton1: squareHeadBtn, offButton2: lineHeadBtn, offPosition1: sCenter, offPosition2: lCenter)
+        toggleButton(onButton: roundHeadBtn, offButton1: squareHeadBtn, offButton2: lineHeadBtn, offButton3: eraserBtn, offPosition1: sCenter, offPosition2: lCenter, offPosition3: eCenter)
         
     }
 
@@ -62,6 +69,7 @@ class LeftViewController: UIViewController {
     @IBAction func squareHeadPressed(_ sender: UIButton) {
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "lineCap"), object: self, userInfo: ["lineCap": sLineCap])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "color"), object: self, userInfo: ["color": currentColor])
         
         //設定button選中的圖案
         squareHeadBtn.setImage(square_on, for: .normal)
@@ -71,17 +79,19 @@ class LeftViewController: UIViewController {
         //button觸發
         toggleButton(onButton: sender,
                      offButton1: roundHeadBtn,
-                     offButton2: lineHeadBtn, offPosition1: rCenter, offPosition2: lCenter
+                     offButton2: lineHeadBtn, offButton3: eraserBtn, offPosition1: rCenter, offPosition2: lCenter, offPosition3: eCenter
                      )
         
         //判斷是否要伸出去
         lineHeadBtn.isSelected = false
         roundHeadBtn.isSelected = false
+        eraserBtn.isSelected = false
     }
     
     @IBAction func lineHeadPressed(_ sender: UIButton) {
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "lineCap"), object: self, userInfo: ["lineCap": lLineCap])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "color"), object: self, userInfo: ["color": currentColor])
         
         //設定button選中的圖案
         squareHeadBtn.setImage(square_off, for: .normal)
@@ -91,17 +101,19 @@ class LeftViewController: UIViewController {
         //button觸發
         toggleButton(onButton: sender,
                      offButton1: roundHeadBtn,
-                     offButton2: squareHeadBtn, offPosition1: rCenter, offPosition2: sCenter
+                     offButton2: squareHeadBtn, offButton3: eraserBtn, offPosition1: rCenter, offPosition2: sCenter, offPosition3: eCenter
                      )
         
         //判斷是否要伸出去
         squareHeadBtn.isSelected = false
         roundHeadBtn.isSelected = false
+        eraserBtn.isSelected = false
     }
     
     @IBAction func roundHeadPressed(_ sender: UIButton) {
         //notification丟出
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "lineCap"), object: self, userInfo: ["lineCap": rLineCap])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "color"), object: self, userInfo: ["color": currentColor])
         
         //設定button選中的圖案
         squareHeadBtn.setImage(square_off, for: .normal)
@@ -111,20 +123,33 @@ class LeftViewController: UIViewController {
         //button觸發
         toggleButton(onButton: sender,
                      offButton1: lineHeadBtn,
-                     offButton2: squareHeadBtn, offPosition1: sCenter, offPosition2: lCenter
+                     offButton2: squareHeadBtn, offButton3: eraserBtn, offPosition1: sCenter, offPosition2: lCenter, offPosition3: eCenter
                      )
         
         //判斷是否要伸出去
         squareHeadBtn.isSelected = false
         lineHeadBtn.isSelected = false
+        eraserBtn.isSelected = false
     }
     
-    func toggleButton(onButton: UIButton, offButton1: UIButton, offButton2: UIButton, offPosition1: CGFloat, offPosition2: CGFloat){
+    @IBAction func eraserPressed(_ sender: UIButton) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "lineCap"), object: self, userInfo: ["lineCap": rLineCap])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "color"), object: self, userInfo: ["color": eraserColor])
+        
+        
+        toggleButton(onButton: eraserBtn, offButton1: roundHeadBtn, offButton2: lineHeadBtn, offButton3: squareHeadBtn, offPosition1: rCenter, offPosition2: lCenter, offPosition3: sCenter)
+        
+        squareHeadBtn.isSelected = false
+        lineHeadBtn.isSelected = false
+        roundHeadBtn.isSelected = false
+    }
+    
+    func toggleButton(onButton: UIButton, offButton1: UIButton, offButton2: UIButton, offButton3: UIButton, offPosition1: CGFloat, offPosition2: CGFloat, offPosition3: CGFloat){
         
         if onButton.isSelected == false{
             
             UIView.animate(withDuration: 0.5, animations: {
-                onButton.frame = CGRect(x: onButton.frame.minX + 50, y: onButton.frame.minY, width: onButton.frame.width, height: onButton.frame.height)
+                onButton.frame = CGRect(x: onButton.frame.minX + 70, y: onButton.frame.minY, width: onButton.frame.width, height: onButton.frame.height)
             })
             onButton.isSelected = true
         }
@@ -137,6 +162,9 @@ class LeftViewController: UIViewController {
             offButton2.frame = CGRect(x: offPosition2, y: offButton2.frame.minY, width: offButton2.frame.width, height: offButton2.frame.height)
         })
         
+        UIView.animate(withDuration: 0.5, animations: {
+            offButton3.frame = CGRect(x: offPosition3, y: offButton3.frame.minY, width: offButton3.frame.width, height: offButton3.frame.height)
+        })
     }
     
     override func didReceiveMemoryWarning() {
