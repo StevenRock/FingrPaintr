@@ -8,25 +8,35 @@
 
 import UIKit
 var lineWidthSizeLabel:Float = 0.0
+var opacityValueLabel:Float = 1
 var currentColor: UIColor!
 
 class CanvasView: UIView {
     
+    @IBOutlet weak var resetBtn: UIButton!
     var lineCap = CGLineCap.round
     var lineWidth: CGFloat = 10
     var colorOpacity: CGFloat = 1
     var penColor = UIColor.black
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        btnImgChanged()
+        
         currentColor = penColor
         lineWidthSizeLabel = Float(lineWidth)
+        opacityValueLabel = Float(colorOpacity)
+        
+        //self.backgroundColor = UIColor.brown//optional
         
         NotificationCenter.default.addObserver(self, selector: #selector(lineCapChanged), name: NSNotification.Name(rawValue: "lineCap"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(widthChanged), name: NSNotification.Name(rawValue: "width"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(colorChanged), name: NSNotification.Name(rawValue: "color"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(opacityChanged), name: NSNotification.Name(rawValue: "opacity"), object: nil)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -54,8 +64,9 @@ class CanvasView: UIView {
         
         ctx?.addLine(to: to)
         
-        let chosedColor = penColor //optional
+        let chosedColor = penColor
         let setColor = chosedColor.withAlphaComponent(colorOpacity)//optional
+        
         setColor.setStroke()
         
         ctx?.setLineWidth(lineWidth)
@@ -67,6 +78,38 @@ class CanvasView: UIView {
         layer.contents = image?.cgImage
         
         UIGraphicsEndImageContext()
+    }
+
+    func btnImgChanged(){
+        
+        let img1 = UIImage(named: "reset1")
+        let img2 = UIImage(named: "reset")
+        resetBtn.imageView?.animationImages = [img1!,img2!]
+        resetBtn.imageView?.animationRepeatCount = 0
+        resetBtn.imageView?.animationDuration = 5
+        resetBtn.imageView?.startAnimating()
+    }
+    
+    @IBAction func leftSideOpen(_ sender: UIButton) {
+        self.window?.rootViewController?.slideMenuController()?.openLeft()
+    }
+    
+    @IBAction func rightSideOpen(_ sender: UIButton) {
+        self.window?.rootViewController?.slideMenuController()?.openRight()
+    }
+    
+    @IBAction func resetCanvas(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Warning", message: "Do You Really Want to Reset your canvas?", preferredStyle: .alert)
+        let yes = UIAlertAction(title: "Yes", style: .default) { _ in
+            self.image = nil
+            self.layer.contents = self.image
+        }
+        let no = UIAlertAction(title: "No", style: .cancel, handler: nil)
+        
+        alert.addAction(yes)
+        alert.addAction(no)
+        
+        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
     }
     
     @objc func lineCapChanged(notification: NSNotification){
@@ -84,4 +127,9 @@ class CanvasView: UIView {
         
         penColor = notification.userInfo?["color"]as! UIColor
     }
+    
+    @objc func opacityChanged(notification: NSNotification){
+        colorOpacity = notification.userInfo?["opacity"]as! CGFloat
+    }
+    
 }

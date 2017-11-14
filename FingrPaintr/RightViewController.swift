@@ -12,6 +12,10 @@ class RightViewController: UIViewController {
 
     @IBOutlet weak var aView: UIView!
     @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var opacitySlider: UISlider!
+    @IBOutlet weak var rSlider: UISlider!
+    @IBOutlet weak var gSlider: UISlider!
+    @IBOutlet weak var bSlider: UISlider!
     
     @IBOutlet weak var blackBtn: UIButton!
     @IBOutlet weak var whiteBtn: UIButton!
@@ -28,17 +32,20 @@ class RightViewController: UIViewController {
     @IBOutlet weak var purpleBtn: UIButton!
     @IBOutlet weak var brownBtn: UIButton!
     
+    var chosedColor = UIColor.black
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         colorView.backgroundColor = UIColor.black
         aView.round()
+        aView.viewGradientLayer()
         colorView.round()
+        opacitySlider.value = opacityValueLabel*100
         // Do any additional setup after loading the view.
     }
     
     @IBAction func colorChangePressed(_ sender: UIButton) {
-        var chosedColor: UIColor!
         
         switch sender {
         case blackBtn:
@@ -51,6 +58,7 @@ class RightViewController: UIViewController {
             chosedColor = UIColor.lightGray
         case grayBtn:
             chosedColor = UIColor.gray
+            
         case redBtn:
             chosedColor = UIColor.red
         case greenBtn:
@@ -73,9 +81,35 @@ class RightViewController: UIViewController {
             break
         }
         
+        let rgb = chosedColor.rgb()
+        UIView.animate(withDuration: 0.5) {
+            self.rSlider.setValue(Float((rgb?.r)!), animated: true)
+            self.gSlider.setValue(Float((rgb?.g)!), animated: true)
+            self.bSlider.setValue(Float((rgb?.b)!), animated: true)
+        }
+        
         currentColor = chosedColor
         colorView.backgroundColor = chosedColor
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "color"), object: self, userInfo: ["color": currentColor])
+    }
+    
+    @IBAction func customColorChanged(_ sender: UISlider) {
+            let r = CGFloat(rSlider.value/255)
+            let g = CGFloat(gSlider.value/255)
+            let b = CGFloat(bSlider.value/255)
+        
+        chosedColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        currentColor = chosedColor
+        colorView.backgroundColor = chosedColor
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "color"), object: self, userInfo: ["color": currentColor])
+    }
+    
+    
+    @IBAction func opcaityChanged(_ sender: UISlider) {
+        let opacityValue = CGFloat(opacitySlider.value/100)
+        chosedColor.withAlphaComponent(opacityValue)
+        colorView.backgroundColor = chosedColor
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "opacity"), object: self, userInfo: ["opacity":opacityValue])
     }
     
     override func didReceiveMemoryWarning() {

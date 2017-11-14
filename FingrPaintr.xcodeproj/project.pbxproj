@@ -17,6 +17,8 @@
 		192620A81FA99E9C00D95358 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192620A71FA99E9C00D95358 /* LeftViewController.swift */; };
 		192620AA1FA99EA400D95358 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192620A91FA99EA400D95358 /* RightViewController.swift */; };
 		192620AE1FA9A08800D95358 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192620AD1FA9A08800D95358 /* CanvasView.swift */; };
+		196C74581FBAC66B00FBF095 /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196C74571FBAC66B00FBF095 /* GalleryCollectionViewController.swift */; };
+		196C745B1FBAC95100FBF095 /* GalleryModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 196C74591FBAC95100FBF095 /* GalleryModel.xcdatamodeld */; };
 		19CB06D61FAAE760003DB70B /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CB06D51FAAE760003DB70B /* extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		192620A71FA99E9C00D95358 /* LeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		192620A91FA99EA400D95358 /* RightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
 		192620AD1FA9A08800D95358 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		196C74571FBAC66B00FBF095 /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
+		196C745A1FBAC95100FBF095 /* GalleryModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GalleryModel.xcdatamodel; sourceTree = "<group>"; };
 		19CB06D51FAAE760003DB70B /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +77,8 @@
 				192620AD1FA9A08800D95358 /* CanvasView.swift */,
 				192620A71FA99E9C00D95358 /* LeftViewController.swift */,
 				192620A91FA99EA400D95358 /* RightViewController.swift */,
+				196C74571FBAC66B00FBF095 /* GalleryCollectionViewController.swift */,
+				196C74591FBAC95100FBF095 /* GalleryModel.xcdatamodeld */,
 				19CB06D51FAAE760003DB70B /* extension.swift */,
 				1926208F1FA9928500D95358 /* Main.storyboard */,
 				192620921FA9928500D95358 /* Assets.xcassets */,
@@ -158,9 +164,11 @@
 				192620AE1FA9A08800D95358 /* CanvasView.swift in Sources */,
 				192620A41FA99B5C00D95358 /* SlideMenuController.swift in Sources */,
 				1926208C1FA9928500D95358 /* AppDelegate.swift in Sources */,
+				196C745B1FBAC95100FBF095 /* GalleryModel.xcdatamodeld in Sources */,
 				192620A81FA99E9C00D95358 /* LeftViewController.swift in Sources */,
 				192620A61FA99E9200D95358 /* MainViewController.swift in Sources */,
 				192620AA1FA99EA400D95358 /* RightViewController.swift in Sources */,
+				196C74581FBAC66B00FBF095 /* GalleryCollectionViewController.swift in Sources */,
 				19CB06D61FAAE760003DB70B /* extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +354,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		196C74591FBAC95100FBF095 /* GalleryModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				196C745A1FBAC95100FBF095 /* GalleryModel.xcdatamodel */,
+			);
+			currentVersion = 196C745A1FBAC95100FBF095 /* GalleryModel.xcdatamodel */;
+			path = GalleryModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 192620801FA9928500D95358 /* Project object */;
 }

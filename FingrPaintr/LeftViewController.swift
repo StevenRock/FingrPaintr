@@ -17,6 +17,7 @@ class LeftViewController: UIViewController {
     @IBOutlet weak var roundHeadBtn: UIButton!
     @IBOutlet weak var widthSlider: UISlider!
     @IBOutlet weak var widthValueLabel: UILabel!
+    @IBOutlet weak var galleryBtn: UIButton!
     
     let square_off = UIImage(named: "squareHeadUnselected.png")!
     let line_off = UIImage(named: "lineHeadUnselected.png")!
@@ -34,7 +35,8 @@ class LeftViewController: UIViewController {
     let lLineCap = CGLineCap.butt
     let sLineCap = CGLineCap.square
     
-    let eraserColor = UIColor.white.withAlphaComponent(1)
+    let eraserColor = UIColor.white
+    let eraserOpacity:CGFloat = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,16 +56,21 @@ class LeftViewController: UIViewController {
         roundHeadBtn.setImage(round_on, for: .normal)
         
         toggleButton(onButton: roundHeadBtn, offButton1: squareHeadBtn, offButton2: lineHeadBtn, offButton3: eraserBtn, offPosition1: sCenter, offPosition2: lCenter, offPosition3: eCenter)
-        
     }
-
+    
+    @IBAction func goToGallery(_ sender: UIButton) {
+        let galleryVC = storyboard?.instantiateViewController(withIdentifier: "galleryVC") as! GalleryCollectionViewController
+        present(galleryVC, animated: true, completion: nil)
+        
+    
+    }
+    
     @IBAction func widthSliderChanged(_ sender: UISlider) {
         widthValueLabel.text = String(format: "%.1f", widthSlider.value)
         widthValueLabel.sizeToFit()
         
         let widthValue = CGFloat(widthSlider.value)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "width"), object: self, userInfo: ["width": widthValue])
-        
     }
     
     @IBAction func squareHeadPressed(_ sender: UIButton) {
@@ -135,6 +142,7 @@ class LeftViewController: UIViewController {
     @IBAction func eraserPressed(_ sender: UIButton) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "lineCap"), object: self, userInfo: ["lineCap": rLineCap])
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "color"), object: self, userInfo: ["color": eraserColor])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "opacity"), object: self, userInfo: ["opacity": eraserOpacity])
         
         
         toggleButton(onButton: eraserBtn, offButton1: roundHeadBtn, offButton2: lineHeadBtn, offButton3: squareHeadBtn, offPosition1: rCenter, offPosition2: lCenter, offPosition3: sCenter)
